@@ -44,3 +44,7 @@ For multi stage dockerfile
 ==> A multi-stage Dockerfile uses multiple FROM statements to create separate build stages, allowing you to optimize the final image size and improve build efficiency
 
 Enjoy exploring the basic functionalities!
+
+For Build Spec.yml in AWS DevOps Cicd Pipeline
+![image](https://github.com/Ravindra0849/calculator_application_python/assets/148531100/3c8a4f8c-d1d9-474f-ad67-ed95502ac2a2)
+
