@@ -45,6 +45,8 @@ For multi stage dockerfile
 
 Enjoy exploring the basic functionalities!
 
-For Build Spec.yml in AWS DevOps Cicd Pipeline
+For Build Spec.yml in AWS DevOps Cicd Pipeline --> to provide sensitive info like credentials --> Go to System Manager --> Click on Parameters store on leftside --> create parameters shown in below image. click on create.
+![image](https://github.com/Ravindra0849/calculator_application_python/assets/148531100/34f794d3-9ea4-4c39-a69c-ea8f17185b12)
+![image](https://github.com/Ravindra0849/calculator_application_python/assets/148531100/71b81dc0-da31-4446-8c54-d3d5b22c1a17)
 ![image](https://github.com/Ravindra0849/calculator_application_python/assets/148531100/3c8a4f8c-d1d9-474f-ad67-ed95502ac2a2)
 
