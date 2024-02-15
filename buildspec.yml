@@ -1,0 +1,28 @@
+version: 0.2
+
+env:
+  parameter-store:
+     DOCKER_REGISTRY_USERNAME: "/calculator-application/docker-credentials/username"
+     DOCKER_REGISTRY_PASSWORD: "/calculator-application/docker-credentials/password"
+     DOCKER_REGISTRY_URL: "/calculator-application/docker-credentials/docker-URL"
+     
+phases:
+  install:
+    runtime-versions:
+       python: 3.11
+
+  pre_build:
+    commands:
+      - pip install -r requirement.txt
+      # - command
+  build:
+    commands:
+      - echo "Building Docker Images Commands"
+      - echo "$DOCKER_REGISTRY_PASSWORD" | docker login -u "$DOCKER_REGISTRY_USERNAME" --password-stdin "$DOCKER_REGISTRY_URL"
+      - docker build -t calculator-application .
+      - docker tag calculator-application "$DOCKER_REGISTRY_USERNAME/calculator-application:${CODEBUILD_BUILD_NUMBER}"
+      - docker push "$DOCKER_REGISTRY_USERNAME/calculator-application:${CODEBUILD_BUILD_NUMBER}"
+  post_build:
+    commands:
+      - echo "Docker Image Pushed Successfully"
+      # - command
